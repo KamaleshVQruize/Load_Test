@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ url_for('static', filename='images/qruize-logo.png') }}" alt="Qruize Logo" class="logo">
+            <button id="theme-toggle" onclick="toggleTheme()">Dark</button>
+        </div>
+        
+        <div class="result-container">
+            <h1>Request Summary</h1>
+            <div class="result">
+                <p><strong>URL:</strong> {{ url }}</p>
+                <p><strong>Total Time:</strong> {{ total_time }} {{ interval_unit }}</p>
+                <p><strong>Number of Requests:</strong> {{ num_requests }}</p>
+                <p><strong>Interval Unit:</strong> {{ interval_unit }}</p>
+            </div>
+
+            <div class="logs">
+                <h2>Request Log</h2>
+                <div class="log-container">
+                    {% for log in logs %}
+                        <div class="log-item {{ log.type }}">
+                            {{ log.message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const toggleButton = document.getElementById('theme-toggle');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light';
+            } else {
+                toggleButton.textContent = 'Dark';
+            }
+        }
+    </script>
+</body>
+</html>

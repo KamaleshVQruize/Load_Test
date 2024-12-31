@@ -1,0 +1,174 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container {
+    margin-top: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.submit-btn {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.result-container {
+    margin-top: 30px;
+}
+
+.result {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.logs {
+    margin-top: 20px;
+}
+
+.log-container {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.log-item {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.log-item.info {
+    background-color: #d1ecf1;
+    border-left: 5px solid #17a2b8;
+}
+
+.log-item.success {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+}
+
+.log-item.warning {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Dark Mode Adjustments */
+body.dark-mode h1{
+    color:black;
+}
+body.dark-mode .log-item {
+    background-color: #444;
+    color: #f5f5f5;
+}
+
+body.dark-mode .log-item.info {
+    background-color: #003b5c;
+    border-left: 5px solid #17a2b8;
+}
+
+body.dark-mode .log-item.success {
+    background-color: #003c3c;
+    border-left: 5px solid #28a745;
+}
+
+body.dark-mode .log-item.warning {
+    background-color: #4e4e4e;
+    border-left: 5px solid #ffc107;
+}
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Request Sender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ url_for('static', filename='images/qruize-logo.png') }}" alt="Qruize Logo" class="logo">
+            <button id="theme-toggle" onclick="toggleTheme()">Dark</button>
+        </div>
+        
+        <div class="form-container">
+            <h1>Send HTTP Requests</h1>
+            <form action="/submit" method="POST">
+                <label for="url">URL:</label>
+                <input type="text" id="url" name="url" placeholder="Enter URL" required>
+                
+                <label for="total_time">Total Time (sec/min):</label>
+                <input type="text" id="total_time" name="total_time" placeholder="Enter total time" required>
+                
+                <label for="num_requests">Number of Requests:</label>
+                <input type="number" id="num_requests" name="num_requests" placeholder="Enter number of requests" required>
+                
+                <label for="interval_unit">Interval Unit:</label>
+                <select id="interval_unit" name="interval_unit">
+                    <option value="sec">Seconds</option>
+                    <option value="min">Minutes</option>
+                </select>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const toggleButton = document.getElementById('theme-toggle');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light';
+            } else {
+                toggleButton.textContent = 'Dark';
+            }
+        }
+    </script>
+</body>
+</html>
